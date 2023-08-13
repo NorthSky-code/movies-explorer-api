@@ -15,8 +15,8 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 
-const { PORT = 3000, DB_ADDRESS } = process.env;
-mongoose.connect(DB_ADDRESS, {
+const { NODE_ENV, PORT = 3000, DB_ADDRESS } = process.env;
+mongoose.connect(NODE_ENV === 'production' ? DB_ADDRESS : 'mongodb://127.0.0.1:27017/bitfilmsdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
