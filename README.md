@@ -1,9 +1,9 @@
-# movies-explorer-api
+# **Backend: movies-explorer-api**
 
 [Ссылка на репозиторий](https://github.com/NorthSky-code/movies-explorer-api)
 
-## Ссылки на проект
+## **Ссылки на проект:**
 
-IP  51.250.104.84
+*  *IP  51.250.104.84*
 
-Backend https://
+*  *Backend https://api.northsky.movie.nomoreparties.co*
