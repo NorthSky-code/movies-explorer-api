@@ -7,6 +7,6 @@ const {
 } = require('../controllers/users');
 
 router.get('/me', validateUserAuth, getAuthUser);
-router.post('/me', validateUpdateUser, updateUser);
+router.patch('/me', validateUpdateUser, updateUser);
 
 module.exports = router;
