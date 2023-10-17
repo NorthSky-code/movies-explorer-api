@@ -1,25 +1,27 @@
 const { celebrate, Joi } = require('celebrate');
 
 const regexLink = /https?:\/\/(www\.)?[a-z0-9.-@_:%=]{1,128}\.[a-z]{1,64}[a-z0-9-_~:\/?#[\]@!\$&'()*+,;=]*/i;
+const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const validateUserInfo = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    email: Joi.string().required().email(),
+    email: Joi.string().required().pattern(regexEmail),
     password: Joi.string().required(),
   }),
 });
 
 const validateUserAuth = celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().email(),
+    email: Joi.string().required().pattern(regexEmail),
     password: Joi.string().required(),
   }),
 });
 
 const validateUpdateUser = celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
+    name: Joi.string().min(2).max(30).required(),
+    email: Joi.string().required().pattern(regexEmail),
   }),
 });
 
