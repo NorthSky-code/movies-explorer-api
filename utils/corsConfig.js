@@ -1,5 +1,6 @@
 const allowedCors = [
   'http://api.northsky.movie.nomoreparties.co',
+  'https://northsky.movie.nomoreparties.co',
   'http://localhost:3000'
 ];
 
